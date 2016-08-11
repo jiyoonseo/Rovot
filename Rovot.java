@@ -61,6 +61,9 @@ public class Rovot{
 			}
 		}
 
+		if (currIndex < 0)
+			return; //error handling
+
 		switch (toDir){
 			case 'L': currIndex += 1;
 				break;
