@@ -72,7 +72,7 @@ public class Rovot{
 			default: break;
 		}
 
-		// edgeCase
+		// out of range handling
 		if(currIndex > 3)
 			currIndex %= dArray.length ;
 		else if(currIndex < 0)
