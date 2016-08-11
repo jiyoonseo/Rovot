@@ -28,7 +28,7 @@ public class Rovot{
 		if( input == null || input.toCharArray().length < 1 ) 
 			return;
 
-		// parse each char to uppercase to simplify
+		// parse each char to uppercase to eliminate confusion of lowercase/uppercase
 		input = input.toUpperCase();
 
 		for(char dVal : input.toCharArray() ){
@@ -53,6 +53,7 @@ public class Rovot{
 		char[] dArray = {'N', 'W', 'S', 'E'};
 		int currIndex = -1 ;
 
+		// find indes in the array dArray to get current robot's index
 		for(int i = 0 ; i < dArray.length; i++){
 			if(this.d == dArray[i]){
 				currIndex = i;
