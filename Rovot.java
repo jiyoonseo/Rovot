@@ -10,14 +10,19 @@ public class Rovot{
 		this.y = 5; 
 	}
 
-	// this constructor can set initial coordinates and direction 
+	// Construct with two integer numbers for coordinate
+	// and char of direction of the Rovot.
 	Rovot(Integer xVal, Integer yVal, char dVal){
 		this.x = xVal; // x cordinate
 		this.y = yVal; // y coordinate
-		this.d = dVal; // direction
+		this.d = dVal; // direction for the Rovot either one of {'N', 'W', 'S', 'E'}
 	}
 
-	// take a string as an integer and move based on each char in the string
+	/*
+		Take a message as a parameter and check each letter in the string
+		'M' = move forward ( call moveRovot() )
+		otherwise change direction ( call changeDir() )
+	*/
 	public void sendMessage(String input){
 		// TODO: error handling for input.length < 1	
 		if( input == null || input.toCharArray().length < 1 ) 
@@ -39,7 +44,10 @@ public class Rovot{
 
 	}
 
-	// change direction of the rovot
+	/* Upon messages, change direction of the Rovot		
+		'L' = turn left  90 degree
+		'R' = turn right 90 degree
+	*/
 	public void changeDir(char toDir){
 
 		char[] dArray = {'N', 'W', 'S', 'E'};
@@ -71,6 +79,10 @@ public class Rovot{
 
 	} 
 
+	/*
+		When needed to move forward, move the Rovot by one 
+		depending on heading direction
+	*/
 	public void moveRovot(char dVal){
 		switch (dVal) {
 				case 'N' : this.y++;
@@ -85,7 +97,7 @@ public class Rovot{
 			}
 	}
 
-
+	// Print thhe Rovot's current position ( coordinates && direction )
 	public void printRovot(){
 		System.out.println("x=" + this.x + ", y=" + y + ", d=" + d);
 	}
